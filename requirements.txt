@@ -1,0 +1,3 @@
+Pandas==2.2.3
+Streamlit==1.44.1
+Plotly==5.24.1
