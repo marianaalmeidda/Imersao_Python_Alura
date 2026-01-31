@@ -69,8 +69,22 @@ df_filtrado = df[
     (df['tamanho_empresa'].isin(tamanhos_selecionados))
 ]
 # --- Conteúdo Principal ---
-st.title("🎲 Dashboard de Análise de Salários na Área de Dados")
-st.markdown("Explore os dados salariais na área de dados nos últimos anos. Utilize os filtros à esquerda para refinar sua análise.")
+
+# --- Header com logo à direita ---
+col_titulo, col_logo = st.columns([6, 1])
+
+with col_titulo:
+    st.title("🎲 Dashboard de Análise de Salários na Área de Dados")
+    st.markdown(
+        "<span style='color:#a855f7'>Mades Consulting</span>",
+        unsafe_allow_html=True
+    )
+
+with col_logo:
+    st.image("logo-mades.png", width=120)
+
+# st.title("🎲 Dashboard de Análise de Salários na Área de Dados")
+# st.markdown("Explore os dados salariais na área de dados nos últimos anos. Utilize os filtros à esquerda para refinar sua análise.")
 
 # --- Métricas Principais (KPIs) ---
 st.subheader("Métricas gerais (Salário anual em USD)")
@@ -158,5 +172,6 @@ with col_graf4:
 # --- Tabela de Dados Detalhados ---
 st.subheader("Dados Detalhados")
 st.dataframe(df_filtrado)
+
 
 
