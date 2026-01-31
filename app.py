@@ -27,6 +27,23 @@ st.set_page_config(
     page_icon="📊",
     layout="wide",
 )
+
+st.markdown("""
+<style>
+/* Chips (tags) dos filtros na sidebar */
+section[data-testid="stSidebar"] [data-baseweb="tag"] {
+    background-color: #a855f7 !important;
+    color: white !important;
+}
+
+/* Hover dos chips */
+section[data-testid="stSidebar"] [data-baseweb="tag"]:hover {
+    background-color: #9333ea !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+
 # --- Carregamento dos dados ---
 df = pd.read_csv("https://raw.githubusercontent.com/vqrca/dashboard_salarios_dados/refs/heads/main/dados-imersao-final.csv")
 # --- Barra Lateral (Filtros) ---
@@ -141,4 +158,5 @@ with col_graf4:
 # --- Tabela de Dados Detalhados ---
 st.subheader("Dados Detalhados")
 st.dataframe(df_filtrado)
+
 
