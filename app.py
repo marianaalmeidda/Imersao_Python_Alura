@@ -74,7 +74,7 @@ df_filtrado = df[
 col_titulo, col_logo = st.columns([6, 1])
 
 with col_titulo:
-    st.title("🎲 Dashboard de Análise de Salários na Área de Dados")
+    st.title("🎲 Dashboard de Análise de Salários")
     st.markdown(
         "<span style='color:#a855f7'>Mades Consulting</span>",
         unsafe_allow_html=True
@@ -172,6 +172,7 @@ with col_graf4:
 # --- Tabela de Dados Detalhados ---
 st.subheader("Dados Detalhados")
 st.dataframe(df_filtrado)
+
 
 
 
